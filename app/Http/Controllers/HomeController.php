@@ -27,17 +27,4 @@ class HomeController extends Controller
 
         return view('admin.home');
     }
-
-    public function welcome()
-    {
-        $about      = Settings::first();
-        $product    = Settings::whereNotNull('title_product')->get();
-        $service    = Settings::whereNotNull('title_service')->get();
-        
-        return view('welcome', [
-            'about'     => $about,
-            'product'   => $product,
-            'service'   => $service,
-        ]);
-    }
 }
