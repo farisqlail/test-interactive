@@ -131,31 +131,20 @@
                     class="right-column d-flex flex-column align-items-lg-start align-items-center text-lg-start text-center">
                     <h2 class="title-text">Produk unggulan kami</h2>
                     <ul class="p-0 m-0">
+                        @foreach ($product as $item)
                         <li class="list-unstyled" style="margin-bottom: 2rem">
                             <h4
                                 class="title-caption d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
                                 <span class="circle text-white d-flex align-items-center justify-content-center">
-                                    1
+                                    {{$loop->iteration}}
                                 </span>
-                                Table Management System
+                                {{ $item->title_product }}
                             </h4>
                             <p class="text-caption">
-                                <b>InterActive MyProfit </b>
-                                dilengkapi fitur Table Management untuk memudahkan kasir dalam mengatur waiting list, reservasi, check in - check out meja, pindah meja, gabung meja, batal meja, split bill, status meja, print dapur serta penyajian cepat dan akurat.
+                                {{ $item->description_product }}
                             </p>
                         </li>
-                        <li class="list-unstyled" style="margin-bottom: 2rem">
-                            <h4
-                                class="title-caption d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
-                                <span class="circle text-white d-flex align-items-center justify-content-center">
-                                    2
-                                </span>
-                                Aplikasi Absensi Via Mobile
-                            </h4>
-                            <p class="text-caption">
-                                <b>InTrax</b> adalah Mobile Attendance atau Aplikasi Absensi via mobile app yang <b>Terintegrasi Mesin Absensi dan Software Payroll</b>  di semua cabang Perusahaan yang terdapat fitur Pengajuan Ijin bagi Karyawan dan untuk dapat memonitor karyawan yang sedang WFH
-                            </p>
-                        </li>
+                        @endforeach
                     </ul>
                     <button class="btn btn-learn text-white">Pelajari lebih lanjut</button>
                 </div>

@@ -30,10 +30,12 @@ class HomeController extends Controller
 
     public function welcome()
     {
-        $about = Settings::first();
+        $about      = Settings::first();
+        $product    = Settings::whereNotNull('title_product')->get();
         
         return view('welcome', [
-            'about' => $about
+            'about'     => $about,
+            'product'   => $product,
         ]);
     }
 }

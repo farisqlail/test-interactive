@@ -57,13 +57,13 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
+                    <i class="fas fa-cog"></i>
                     <span>Pengaturan</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('admin.about') }}">Tentang Kami</a>
-                        <a class="collapse-item" href="register.html">Produk Unggulan</a>
+                        <a class="collapse-item" href="{{ route('admin.product') }}">Produk Unggulan</a>
                         <a class="collapse-item" href="forgot-password.html">Layanan</a>
                     </div>
                 </div>
