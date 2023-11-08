@@ -82,7 +82,7 @@
                         </li>
                     </ul>
                     <div class="gap-3">
-                        <a href="{{route('login')}}" class="btn btn-fill text-white">Masuk</a>
+                        <a href="{{ route('login') }}" class="btn btn-fill text-white">Masuk</a>
                     </div>
                 </div>
             </nav>
@@ -94,7 +94,7 @@
                         class="left-column d-flex flex-lg-grow-1 flex-column align-items-lg-start text-lg-start align-items-center text-center">
                         <p class="text-caption">Tentang kita</p>
                         <span class="title-text-big">
-                            {{$about->about}}
+                            {{ $about->about }}
                         </span>
                         <div
                             class="d-flex flex-sm-row flex-column align-items-center mx-lg-0 mx-auto justify-content-center gap-3">
@@ -132,18 +132,18 @@
                     <h2 class="title-text">Produk unggulan kami</h2>
                     <ul class="p-0 m-0">
                         @foreach ($product as $item)
-                        <li class="list-unstyled" style="margin-bottom: 2rem">
-                            <h4
-                                class="title-caption d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
-                                <span class="circle text-white d-flex align-items-center justify-content-center">
-                                    {{$loop->iteration}}
-                                </span>
-                                {{ $item->title_product }}
-                            </h4>
-                            <p class="text-caption">
-                                {{ $item->description_product }}
-                            </p>
-                        </li>
+                            <li class="list-unstyled" style="margin-bottom: 2rem">
+                                <h4
+                                    class="title-caption d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
+                                    <span class="circle text-white d-flex align-items-center justify-content-center">
+                                        {{ $loop->iteration }}
+                                    </span>
+                                    {{ $item->title_product }}
+                                </h4>
+                                <p class="text-caption">
+                                    {{ $item->description_product }}
+                                </p>
+                            </li>
                         @endforeach
                     </ul>
                     <button class="btn btn-learn text-white">Pelajari lebih lanjut</button>
@@ -159,14 +159,14 @@
         <div class="container">
             <div class="row mx-0 text-center d-block">
                 <div class="headline">
-                  <span class="cl-light-orange font-red-hat-display">Masalah Yang Sering Terjadi </span> <br>
+                    <span class="cl-light-orange font-red-hat-display">Masalah Yang Sering Terjadi </span> <br>
                     Pada Bisnis
                 </div>
             </div>
             <div class="value row mx-0 d-flex justify-content-center justify-content-md-between">
                 <div class="card">
                     <div class="card-body p-0">
-                      <box-icon type='solid' size='lg' name='calculator'></box-icon>
+                        <box-icon type='solid' size='lg' name='calculator'></box-icon>
                         <div class="card-desc">
                             <h4 class="card-title">Masih <span class="cl-light-orange">Manual</span></h4>
                             <p class="card-text">Transaksi Masih dilakukan manual dan belum online
@@ -176,9 +176,10 @@
                 </div>
                 <div class="card">
                     <div class="card-body p-0">
-                      <box-icon name='book-reader' size='lg' ></box-icon>
+                        <box-icon name='book-reader' size='lg'></box-icon>
                         <div class="card-desc">
-                            <h4 class="card-title"> <span class="cl-light-orange">Kurangnya</span> Edukasi Digital</h4>
+                            <h4 class="card-title"> <span class="cl-light-orange">Kurangnya</span> Edukasi Digital
+                            </h4>
                             <p class="card-text">Kurangnya edukasi step by step dalam menjalankan sistem
                             </p>
                         </div>
@@ -186,7 +187,7 @@
                 </div>
                 <div class="card">
                     <div class="card-body p-0">
-                      <box-icon name='book-reader' size='lg' ></box-icon>
+                        <box-icon name='book-reader' size='lg'></box-icon>
                         <div class="card-desc">
                             <h4 class="card-title">Tidak Saling <span class="cl-light-orange">Terintegrasi</span></h4>
                             <p class="card-text">Sudah menggunakan sistem tapi semuanya tidak saling terintegrasi
@@ -209,42 +210,20 @@
                         <span class="cl-light-orange">Interactive</span>
                     </div>
                     <div class="row benefits">
-                        <div class="col-md-4 mt-md-0 mb-3">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://interactive.co.id/product/images/assets/home/indeo_logo.png"
-                                    alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                  InterActive Design Studio
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                  Kami membantu <b> Membranding Produk Bisnis </b> Anda melalui Digital Agency dengan semangat Creativity Without Borders.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mt-5 mt-md-0 mb-3">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://interactive.co.id/product/images/assets/home/inspire_logo.png"
-                                    alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Finish The Quiz
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                  Perusahaan <b>Konsultan Manajemen</b> yang dibangun sejak tahun 2015 di bawah naungan PT. Interaktif Inspirasi Dunia.
+                        @foreach ($service as $item)
+                            <div class="col-md-4 mt-md-0 mb-3">
+                                <div class="rectangle mx-auto px-1">
+                                    <img src="{{ asset('storage/' . $item->image_service) }}"
+                                    class="img-fluid">
+                                    <div class="headline-benefit">
+                                        {{ $item->title_service }}
+                                    </div>
+                                    <div class="subheadline-benefit mt-2">
+                                        {{ $item->description_service }}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 mt-5 mt-md-0 mb-3">
-                            <div class="rectangle mx-auto px-1">
-                                <img src="https://interactive.co.id/product/images/assets/home/logo-interactive-academy.png"
-                                    alt="benefits-1" class="img-fluid">
-                                <div class="headline-benefit">
-                                    Interview
-                                </div>
-                                <div class="subheadline-benefit mt-2">
-                                  InterActive Academy adalah suatu Lembaga Pelatihan Kompetensi di bawah naungan InterActive Group.
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -336,17 +315,20 @@
                         <nav class="list-unstyled">
                             <li class="list-space">
                                 <a href="" class="list-menu">Jl. Ambengan No.85, Surabaya Pusat
-                                  Senin - Jum'at: 08.30 WIB - 17.30 WIB
-                                  Sabtu: 08.30 WIB - 15.00 WIB</a>
+                                    Senin - Jum'at: 08.30 WIB - 17.30 WIB
+                                    Sabtu: 08.30 WIB - 15.00 WIB</a>
                             </li>
                             <li class="list-space">
                                 <a href="" class="list-menu">Telp. 031-535.5353 (Hunting),</a>
                             </li>
                             <li class="list-space">
-                                <a href="" class="list-menu">031-534.1876, <a href="" class="list-menu">031-535.5723 </a></a>
+                                <a href="" class="list-menu">031-534.1876, <a href=""
+                                        class="list-menu">031-535.5723 </a></a>
                             </li>
                             <li class="list-space">
-                                <a href="" class="list-menu">sales@interactive.co.id (Software), <a href="" class="list-menu">marketing@interactive.co.id (Hardware)</a></a>
+                                <a href="" class="list-menu">sales@interactive.co.id (Software), <a
+                                        href="" class="list-menu">marketing@interactive.co.id
+                                        (Hardware)</a></a>
                             </li>
                         </nav>
                     </div>
@@ -354,7 +336,9 @@
                         <h2 class="footer-text-title">Kontak Kami Jakarta</h2>
                         <nav class="list-unstyled">
                             <li class="list-space">
-                                <a href="" class="list-menu">Jl. Lapangan Bola No. 5A, RT.3/RW.10, Kec. Kebun Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11530 Senin - Jum'at: 08.30 WIB - 17.30 WIB</a>
+                                <a href="" class="list-menu">Jl. Lapangan Bola No. 5A, RT.3/RW.10, Kec. Kebun
+                                    Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11530 Senin - Jum'at: 08.30
+                                    WIB - 17.30 WIB</a>
                             </li>
                             <li class="list-space">
                                 <a href="" class="list-menu">Telp. 021-5305.757</a>
@@ -404,12 +388,12 @@
                                     fill="#C7C7C7" />
                             </svg>
                         </a>
-                        
+
                     </div>
                     <div class="mx-auto d-flex flex-wrap align-items-center justify-content-center gap-4">
                     </div>
                     <nav class="d-flex flex-lg-row flex-column align-items-center justify-content-center">
-                        <p style="margin: 0">Test © {{ date("Y") }} Faris Rizqilail</p>
+                        <p style="margin: 0">Test © {{ date('Y') }} Faris Rizqilail</p>
                     </nav>
                 </div>
             </div>

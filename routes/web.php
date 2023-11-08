@@ -19,3 +19,11 @@ Route::post('/admin/product/add', [App\Http\Controllers\ProductsController::clas
 Route::get('/admin/product/edit/{id}', [App\Http\Controllers\ProductsController::class, 'edit'])->name('admin.product.edit');
 Route::put('/admin/product/edit/{id}', [App\Http\Controllers\ProductsController::class, 'update'])->name('admin.product.update');
 Route::get('/admin/product/delete/{id}', [App\Http\Controllers\ProductsController::class, 'destroy'])->name('admin.product.delete');
+
+//Layanan
+Route::get('/admin/service', [App\Http\Controllers\ServicesController::class, 'index'])->name('admin.service');
+Route::get('/admin/service/add', [App\Http\Controllers\ServicesController::class, 'create'])->name('admin.service.add');
+Route::post('/admin/service/add', [App\Http\Controllers\ServicesController::class, 'store'])->name('admin.service.store');
+Route::get('/admin/service/edit/{id}', [App\Http\Controllers\ServicesController::class, 'edit'])->name('admin.service.edit');
+Route::put('/admin/service/edit/{id}', [App\Http\Controllers\ServicesController::class, 'update'])->name('admin.service.update');
+Route::get('/admin/service/delete/{id}', [App\Http\Controllers\ServicesController::class, 'destroy'])->name('admin.service.delete');

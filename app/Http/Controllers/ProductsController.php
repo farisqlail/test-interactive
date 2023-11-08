@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Settings;
 
 class ProductsController extends Controller
@@ -33,12 +34,22 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         try {
-            $settings                       = new Settings();
-            $settings->title_product        = $request->get('title');
-            $settings->description_product  = $request->get('desc');
-            $settings->save();
+            $validator = Validator::make(request()->all(), [
+                'title' => 'required',
+                'desc' => "required",
+            ]);
 
-            return redirect()->route('admin.product')->with('success', 'Berhasil menambah produk unggulan');
+            if ($validator->fails()) {
+                return back()->withErrors($validator->errors());
+            } else {
+                $settings                       = new Settings();
+                $settings->title_product        = $request->get('title');
+                $settings->description_product  = $request->get('desc');
+                $settings->save();
+
+                return redirect()->route('admin.product')->with('success', 'Berhasil menambah produk unggulan');
+            }
+
             
         } catch (QueryException $e) {
             dd($e);
@@ -68,12 +79,21 @@ class ProductsController extends Controller
     public function update(Request $request, string $id)
     {
         try {
-            $settings                       = Settings::findOrFail($id);
-            $settings->title_product        = $request->get('title');
-            $settings->description_product  = $request->get('desc');
-            $settings->save();
+            $validator = Validator::make(request()->all(), [
+                'title' => 'required',
+                'desc' => "required",
+            ]);
 
-            return redirect()->route('admin.product')->with('success', 'Berhasil mengubah produk unggulan');
+            if ($validator->fails()) {
+                return back()->withErrors($validator->errors());
+            } else {
+                $settings                       = Settings::findOrFail($id);
+                $settings->title_product        = $request->get('title');
+                $settings->description_product  = $request->get('desc');
+                $settings->save();
+
+                return redirect()->route('admin.product')->with('success', 'Berhasil mengubah produk unggulan');
+            }
             
         } catch (QueryException $e) {
             dd($e);

@@ -32,10 +32,12 @@ class HomeController extends Controller
     {
         $about      = Settings::first();
         $product    = Settings::whereNotNull('title_product')->get();
+        $service    = Settings::whereNotNull('title_service')->get();
         
         return view('welcome', [
             'about'     => $about,
             'product'   => $product,
+            'service'   => $service,
         ]);
     }
 }

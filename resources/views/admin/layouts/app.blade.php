@@ -64,7 +64,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('admin.about') }}">Tentang Kami</a>
                         <a class="collapse-item" href="{{ route('admin.product') }}">Produk Unggulan</a>
-                        <a class="collapse-item" href="forgot-password.html">Layanan</a>
+                        <a class="collapse-item" href="{{ route('admin.service') }}">Layanan</a>
                     </div>
                 </div>
             </li>
