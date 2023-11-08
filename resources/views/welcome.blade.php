@@ -94,10 +94,7 @@
                         class="left-column d-flex flex-lg-grow-1 flex-column align-items-lg-start text-lg-start align-items-center text-center">
                         <p class="text-caption">Tentang kita</p>
                         <span class="title-text-big">
-                            InterActive pertama kali didirikan pada Oktober 1999 oleh Alex Surya Rahardjo, S.T seorang
-                            professional bisnis yang telah lama berkecimpung dalam Bidang Teknologi Informasi bersama
-                            dengan Efi Muliati, S.S yang sangat familiar dalam dunia E-Commerce dan Marketing
-                            Communication Relationship dengan nama InterActive Computer.
+                            {{$about->about}}
                         </span>
                         <div
                             class="d-flex flex-sm-row flex-column align-items-center mx-lg-0 mx-auto justify-content-center gap-3">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Settings;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         return view('admin.home');
+    }
+
+    public function welcome()
+    {
+        $about = Settings::first();
+        
+        return view('welcome', [
+            'about' => $about
+        ]);
     }
 }

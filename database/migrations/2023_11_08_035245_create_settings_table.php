@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->text('about');
-            $table->string('title_product');
-            $table->string('description_product');
-            $table->string('image_service');
-            $table->string('title_service');
-            $table->string('description_service');
+            $table->text('about')->nullable();
+            $table->string('title_product')->nullable();
+            $table->string('description_product')->nullable();
+            $table->string('image_service')->nullable();
+            $table->string('title_service')->nullable();
+            $table->string('description_service')->nullable();
             $table->timestamps();
         });
     }
