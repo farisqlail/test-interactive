@@ -223,7 +223,7 @@
                         <span class="cl-light-orange">Interactive</span>
                     </div>
                     <div class="row benefits">
-                        <div class="col-md-4 mt-md-0">
+                        <div class="col-md-4 mt-md-0 mb-3">
                             <div class="rectangle mx-auto px-1">
                                 <img src="https://interactive.co.id/product/images/assets/home/indeo_logo.png"
                                     alt="benefits-1" class="img-fluid">
@@ -235,7 +235,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 mt-5 mt-md-0">
+                        <div class="col-md-4 mt-5 mt-md-0 mb-3">
                             <div class="rectangle mx-auto px-1">
                                 <img src="https://interactive.co.id/product/images/assets/home/inspire_logo.png"
                                     alt="benefits-1" class="img-fluid">
@@ -247,7 +247,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4 mt-5 mt-md-0">
+                        <div class="col-md-4 mt-5 mt-md-0 mb-3">
                             <div class="rectangle mx-auto px-1">
                                 <img src="https://interactive.co.id/product/images/assets/home/logo-interactive-academy.png"
                                     alt="benefits-1" class="img-fluid">
