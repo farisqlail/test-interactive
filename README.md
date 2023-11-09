@@ -6,3 +6,7 @@
 - php artisan key:generate
 - Atur pada file .env ubah nama database "interactive"
 - php artisan migration --seed
+
+Akun Admin
+Email : admin@gmail.com
+password : admin123
