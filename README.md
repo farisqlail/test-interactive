@@ -8,5 +8,5 @@
 - php artisan migration --seed
 
 Akun Admin
-Email : admin@gmail.com
+Email : admin@gmail.com <br>
 password : admin123
